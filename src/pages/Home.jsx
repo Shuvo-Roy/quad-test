@@ -1,12 +1,21 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import React from "react";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Popular from "./Popular";
+import Recommendation from "./Recommendation";
+import Footer from "../components/Footer";
+import { useData } from "../context/DataContext";
 
 export default function Home() {
+  const data = useData();
+  //console.log(data)
   return (
     <React.Fragment>
-      <div className='m-auto lg:w-10/12 md:w-11/12 sm:w-11/12'>
-        <Navbar/>
-      </div>
+      <Navbar />
+      <Hero />
+      <Popular data={data} />
+      <Recommendation data={data} />
+      <Footer />
     </React.Fragment>
-  )
+  );
 }

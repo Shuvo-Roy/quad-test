@@ -1,12 +1,12 @@
-import Home from "./pages/Home"
+import { DataProvider } from "./context/DataContext";
+import Home from "./pages/Home";
 
 function App() {
-
   return (
-    <div className="bg-bgBack">
-      <Home/>
-    </div>
-  )
+    <DataProvider>
+        <Home />
+    </DataProvider>
+  );
 }
 
-export default App
+export default App;
